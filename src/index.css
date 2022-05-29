@@ -172,6 +172,19 @@ body {
   background: #dddddd;
 }
 
+.fab-hero {
+  max-width: 300px;
+  width: 100% !important;
+  display: block !important;
+  margin: 10px auto !important;
+}
+
+.fab-hero:focus,
+.fab-hero:hover {
+  transform: translateY(-3px);
+  transition: all .3s ease-in-out;
+}
+
 /* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
 /* ROBADO DO BOOTSTRAP: SEÇÃO DE FLEX E COLUNAS */
 /* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
