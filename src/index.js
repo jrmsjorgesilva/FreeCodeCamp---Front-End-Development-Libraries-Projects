@@ -2,16 +2,62 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import NovoApp from './componentes/NovoApp';
+import Calculator from './componentes/Calculator/Calculator';
+import AppDrum from './componentes/DrumDreaming/AppDrum';
+import MarkDownPreviewer from './componentes/MarkDownPreviewer/MarkDownPreviewer';
+import RandomQuotes from './componentes/RandomQuotes/RandomQuotes';
+import Pomodoro from './componentes/Pomodoro/Pomodoro';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+
+        <Route 
+          path='/'
+          element={<App />}
+        />
+
+        <Route 
+          path='/AppDrum'
+          element={<AppDrum />}
+        />
+
+        <Route 
+          path='/Calculator'
+          element={<Calculator />}
+        />
+
+        <Route 
+          path='/MarkDownPreviewer'
+          element={<MarkDownPreviewer />}
+        />
+
+        <Route 
+          path='/RandomQuotes'
+          element={<RandomQuotes />}
+        />
+
+        <Route 
+          path='/Pomodoro'
+          element={<Pomodoro />}
+        />
+
+      </Routes>
+      <footer>
+      <small>
+            Desenvolvido por Jorge Machado &copy;  
+            <a 
+                href='https://jmsoftwares.com.br/'
+                target='_blank'
+            >
+                 Jm Softwares
+            </a>
+        </small>
+      </footer>
+    </Router>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

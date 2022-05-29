@@ -1,0 +1,54 @@
+ 
+  .buttons-and-value {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 0px;
+    font-size: 3em;
+    cursor: pointer;
+  }
+  
+  .setting-label {
+    margin-top: 2px;
+  }
+  
+  .button {
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    line-height: 55px;
+    min-width: 80px;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: #00000055;
+  }
+  
+  #time-left {
+    font-size: 8.5em;
+  }
+  
+  /* #indicator {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+   */
+  #footer {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 0px;
+  }
+
+  @media screen and (max-width: 600px) {
+    #footer {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+      }   
+  }
