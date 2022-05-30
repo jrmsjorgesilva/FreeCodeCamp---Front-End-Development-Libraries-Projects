@@ -3,34 +3,35 @@ import { TextField, Paper, Box, Stack } from '@mui/material'
 
 const MarkDownPreviewer = () => {
 
-  const defaultMarkdown = `# React Markdown Previewer
+  const defaultMarkdown = `
+  # React Markdown Previewer
 
-  ## Type your Markdown in the Editor!
+  ## Digite seu Markdown no Editor!
   <br><br>
   
-  ### Main functionality
+  ### Funcionalidade principal
   
-  - Preview window updates real time with markdown syntax
-  - The editor has some predefined input on page load
-  - BONUS: Use &lt;br&gt; for line breaks
+  - A janela de visualização atualiza em tempo real com sintaxe de remarcação
+  - O editor tem alguma entrada predefinida no carregamento da página
+  - BÔNUS: Use &lt;br&gt; para quebras de linha
   
   <br>
   
-  \`Is the syntax highlighting even working?\`
+  \`O realce de sintaxe está funcionando?\`
   \`\`\`javascript
-  let s = "JavaScript syntax highlighting";
-  alert(s);
+  let s = "Realce de sintaxe JavaScript";
+  alerta(s);
   \`\`\`
   <br>
   
-  > “If you are distressed by anything external, the pain is not due to the thing itself, but to your estimate of it; and this you have the power to revoke at any moment.”
-  ― Marcus Aurelius, Meditations 
+  > “Se você está angustiado por algo externo, a dor não se deve à coisa em si, mas à sua avaliação dela; e isso você tem o poder de revogar a qualquer momento.”
+  ― Marco Aurélio, Meditações
   <br>
   
   ![react logo](https://i.postimg.cc/Bv9y8sBZ/react-logo.png)
   <br>
   
-  Coded by **Stahlone**, 2019 for [freeCodeCamp](https://www.freecodecamp.org) Front End Libraries Challenges
+  Codificada por **Stahlone**, 2019 para [freeCodeCamp](https://www.freecodecamp.org) Desafios das bibliotecas de front-end
   `
 
   const [text, setText] = useState(() => defaultMarkdown);
@@ -39,33 +40,36 @@ const MarkDownPreviewer = () => {
     <Box className='app__container'>
         <h1 class='app__title center' id="title">Markdown Previewer</h1>
         <Stack 
-            direction="row"
+            className='markdown-box'
+            direction="column"
             justifyContent="center"
             alignItems="center"
             spacing={2}
         >
             <TextField
-            id="editor" 
-            label="Pré-visualizador de linguagem de marcação"
-            multiline
-            rows={12}
-            fullWidth
-            style={{
-              minWidth: '50%',
-              minHeight: '300px'
-            }}
-            defaultValue="Digite algum texto de remarcação..."
-            variant="filled"
-            value={ text } 
-            onChange={ (e) => setText(e.target.value) } 
+              className='markdown-box'
+              id="editor" 
+              label="Pré-visualizador de linguagem de marcação"
+              multiline
+              rows={8}
+              fullWidth
+              style={{
+                minWidth: '50%',
+                minHeight: '200px',
+              }}
+              defaultValue="Digite algum texto de remarcação..."
+              variant="filled"
+              value={ text } 
+              onChange={ (e) => setText(e.target.value) } 
             />
             <Paper 
+              className='markdown-box'
               id="preview"
               dangerouslySetInnerHTML={{ __html: text }}
               fullWidth
               style={{
                 minWidth: '50%',
-                minHeight: '300px',
+                minHeight: '200px',
                 padding: '15px'
               }}
 

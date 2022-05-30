@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PadBank from './PadBank'
 import { Stack, Switch, Slider, Alert } from '@mui/material'
 import { FaVolumeDown, FaVolumeUp } from 'react-icons/fa';
@@ -204,14 +204,9 @@ const AppDrum = ({}) => {
                     updateDisplay={displayClipName}
                 />
 
-                {/* <div className='logo'>
-                    <div className='inner-logo '>{'FCC' + String.fromCharCode(160)}</div>
-                    <i className='inner-logo fa fa-free-code-camp' />
-                </div> */}
-
                 <div className='controls-container'>
                     <Alert severity='info' className='center m-3' >
-                        <h1>{display}</h1>
+                        <h1 id='display'>{display}</h1>
                     </Alert>
                     <div >
                         <FaVolumeDown style={{ margin: '0px 20px', fontSize: '30px' }} />

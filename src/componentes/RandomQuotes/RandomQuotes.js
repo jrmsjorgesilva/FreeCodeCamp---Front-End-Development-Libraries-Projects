@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Stack, Button } from '@mui/material'
-import { FaBrain, FaQuoteLeft } from 'react-icons/fa'
+import { FaBrain, FaQuoteLeft, FaTwitter } from 'react-icons/fa'
 
 const RandomQuotes = () => {
 
@@ -67,7 +67,7 @@ const RandomQuotes = () => {
   const [quote, setQuote] = useState(() => 0)
 
   return (
-    <Box className='app__container'>
+    <Box id="quote-box" className='app__container'>
         <h1 className='app__title center'>RandomQuotes</h1>
         <Stack 
             direction='column' 
@@ -75,6 +75,7 @@ const RandomQuotes = () => {
             alignItems='center'
         >
             <span 
+                id="text"
                 className='quote'
                 style={{
                     fontSize: '30px',
@@ -92,11 +93,20 @@ const RandomQuotes = () => {
                     }}
                 />
                 {quotes[quote].quote}
-                <p style={{ color: 'lime', margin: '20px 10px', fontSize: '14px' }}>
+                <p id="author" style={{ color: 'lime', margin: '20px 10px', fontSize: '14px' }}>
                     {quotes[quote].author}
+                    <a 
+                        id='tweet-quote' 
+                        class="twitter-share-button" 
+                        href={`https://twitter.com/intent/tweet?text=${quotes[quote].quote}`} 
+                        target='_blank'
+                    >
+                        <FaTwitter style={{ color: 'skyblue', fontSize: '18px', margin: '5px', transform: 'translateY(8px)' }} />
+                    </a>
                 </p>
             </span>
             <Button 
+                id="new-quote"
                 style={{
                     display: 'block',
                     width: '100%'

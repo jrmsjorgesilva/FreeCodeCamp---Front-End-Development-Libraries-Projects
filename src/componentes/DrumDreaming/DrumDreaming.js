@@ -14,8 +14,19 @@ const DrumDreaming = ({ clip, clipId, keyCode, keyTrigger, power, updateDisplay,
     // }
 
     useEffect(() => {
-        document.addEventListener('keydown', () => handleKeyPress())
-    }, []);
+
+        document.addEventListener('keydown', handleKeyPress);
+        return () => {
+            document.addEventListener('keydown', handleKeyPress);
+        }
+
+    }, [])
+
+    const handleKeyPress = (e) => {
+        if (e.keyCode === keyCode) {
+            playSound();
+        }
+    }
 
     // STYLES
 
@@ -33,11 +44,7 @@ const DrumDreaming = ({ clip, clipId, keyCode, keyTrigger, power, updateDisplay,
     const [padStyle, setPadStyle] = useState(() => inactiveStyle);
 
     // Other functions
-    const handleKeyPress = (e) => {
-        if (e.keyCode === keyCode) {
-            playSound();
-        }
-    }
+
 
     const activatePad = () => {
         if (power) {

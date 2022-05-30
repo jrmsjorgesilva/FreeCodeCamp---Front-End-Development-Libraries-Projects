@@ -27,6 +27,7 @@ const PadBank = ({ clipVolume, currentPadBank, power, updateDisplay }) => {
             keyTrigger={padBankArr[i].keyTrigger}
             power={power}
             updateDisplay={updateDisplay}
+            currentPadBank={currentPadBank}
           />
         );
       });

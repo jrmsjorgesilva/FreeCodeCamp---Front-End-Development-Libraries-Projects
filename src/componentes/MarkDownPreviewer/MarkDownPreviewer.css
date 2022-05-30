@@ -81,9 +81,9 @@ blockquote {
       'preview';
   }
 
-  #editor,
+  /* #editor,
   #preview {
     width: 90vw;
-    height: 400px;
-  }
+    height: 600px;
+  } */
 }
